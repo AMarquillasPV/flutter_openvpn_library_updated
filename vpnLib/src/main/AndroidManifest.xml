@@ -7,7 +7,8 @@ package="de.blinkt.openvpn">
 <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
 <application>
-    <activity android:name=".OboloiVPN"/>
+    <activity android:name=".OboloiVPN"
+              android:exported="true"/>
     <!-- Begin Activity by ics-openvpn -->
     <service
         android:name="de.blinkt.openvpn.core.OpenVPNService"
@@ -21,7 +22,9 @@ package="de.blinkt.openvpn">
         android:name="de.blinkt.openvpn.LaunchVPN"
         android:excludeFromRecents="true"
         android:label="@string/vpn_launch_title"
-        android:theme="@android:style/Theme.DeviceDefault.Light.Panel">
+        android:theme="@android:style/Theme.DeviceDefault.Light.Panel"
+        android:exported="true"
+        >
         <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
 
@@ -30,6 +33,7 @@ package="de.blinkt.openvpn">
     </activity>
     <activity
         android:name=".DisconnectVPNActivity"
+        android:exported="true"
         android:excludeFromRecents="true"
         android:noHistory="true"
         android:taskAffinity=".DisconnectVPN"
