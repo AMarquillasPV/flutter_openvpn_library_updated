@@ -439,13 +439,13 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
         Intent pauseVPN = new Intent(this, OpenVPNService.class);
         if (mDeviceStateReceiver == null || !mDeviceStateReceiver.isUserPaused()) {
             pauseVPN.setAction(PAUSE_VPN);
-            PendingIntent pauseVPNPending = PendingIntent.getService(this, 0, pauseVPN, 0 | PendingIntent.FLAG_MUTABLE);
+            PendingIntent pauseVPNPending = PendingIntent.getService(this, 0, pauseVPN, 0);
             nbuilder.addAction(R.drawable.ic_menu_pause,
                     getString(R.string.pauseVPN), pauseVPNPending);
 
         } else {
             pauseVPN.setAction(RESUME_VPN);
-            PendingIntent resumeVPNPending = PendingIntent.getService(this, 0, pauseVPN, 0 | PendingIntent.FLAG_MUTABLE);
+            PendingIntent resumeVPNPending = PendingIntent.getService(this, 0, pauseVPN, 0);
             nbuilder.addAction(R.drawable.ic_menu_play,
                     getString(R.string.resumevpn), resumeVPNPending);
         }
