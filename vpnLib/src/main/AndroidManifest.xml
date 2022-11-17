@@ -21,7 +21,6 @@ package="de.blinkt.openvpn">
 
     <activity
         android:name="de.blinkt.openvpn.LaunchVPN"
-        android:exported="true"
         android:excludeFromRecents="true"
         android:label="@string/vpn_launch_title"
         android:theme="@android:style/Theme.DeviceDefault.Light.Panel"
